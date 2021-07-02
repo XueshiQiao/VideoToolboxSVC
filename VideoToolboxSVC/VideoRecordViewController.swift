@@ -10,8 +10,9 @@ import AVFoundation
 
 class VideoRecordViewController: UIViewController {
     
-    var playerView: SampleBufferPlayerView?
+    @IBOutlet weak var recordButton: UIButton!
     var videoCapturer: VideoCapturer?
+    var previewLayer: AVCaptureVideoPreviewLayer?
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -23,13 +24,16 @@ class VideoRecordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playerView = SampleBufferPlayerView(frame: self.view.frame)
         videoCapturer = VideoCapturer()
+        self.previewLayer = AVCaptureVideoPreviewLayer(session: self.videoCapturer!.captureSession)
+        self.previewLayer?.videoGravity = .resizeAspectFill
+        self.previewLayer?.frame = self.view.bounds
+        self.view.layer.addSublayer(self.previewLayer!)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        playerView?.frame = self.view.frame
+        self.previewLayer?.frame = self.view.bounds
     }
     
     @IBAction func recordButtonDidTap(_ sender: Any) {
@@ -39,7 +43,6 @@ class VideoRecordViewController: UIViewController {
 
 extension VideoRecordViewController: VideoCapturerDelegate {
     func videoCapturer(_ videoCapturer: VideoCapturer, didOutput sampleBuffer: CMSampleBuffer) {
-        playerView?.present(sampleBuffer)
     }
 }
 

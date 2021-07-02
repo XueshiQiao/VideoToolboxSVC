@@ -26,9 +26,7 @@ class VideoCapturer: NSObject {
     
     weak var delegate: VideoCapturerDelegate?
     
-    func start(with delegate: VideoCapturerDelegate) {
-        self.delegate = delegate
-        
+    func prepare() {
         captureSession.beginConfiguration()
         defer {
             captureSession.commitConfiguration()
@@ -39,7 +37,7 @@ class VideoCapturer: NSObject {
         }
         
         videoDevice = AVCaptureDevice.devices(for: .video).filter({ device in
-            return device.position == .back
+            return device.position == .front
         }).first
         
         if let videoDevice = videoDevice {
@@ -53,8 +51,14 @@ class VideoCapturer: NSObject {
                 }
             }
         }
+
+    }
+    
+    func start(with delegate: VideoCapturerDelegate) {
+        prepare()
         
-        
+        self.delegate = delegate
+        self.captureSession.startRunning()
     }
 }
 

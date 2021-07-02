@@ -15,7 +15,6 @@
 		D40079C9268F6EA100DBA5AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D40079C7268F6EA100DBA5AF /* LaunchScreen.storyboard */; };
 		D40079D4268F6EA100DBA5AF /* VideoToolboxSVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079D3268F6EA100DBA5AF /* VideoToolboxSVCTests.swift */; };
 		D40079DE268F6EA100DBA5AF /* VideoToolboxSVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079DD268F6EA100DBA5AF /* VideoToolboxSVCUITests.swift */; };
-		D40079EB268F719B00DBA5AF /* SampleBufferPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079EA268F719B00DBA5AF /* SampleBufferPlayerView.swift */; };
 		D40079ED268F755F00DBA5AF /* VideoCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079EC268F755F00DBA5AF /* VideoCapturer.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +48,6 @@
 		D40079D3268F6EA100DBA5AF /* VideoToolboxSVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoToolboxSVCTests.swift; sourceTree = "<group>"; };
 		D40079D9268F6EA100DBA5AF /* VideoToolboxSVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoToolboxSVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40079DD268F6EA100DBA5AF /* VideoToolboxSVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoToolboxSVCUITests.swift; sourceTree = "<group>"; };
-		D40079EA268F719B00DBA5AF /* SampleBufferPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBufferPlayerView.swift; sourceTree = "<group>"; };
 		D40079EC268F755F00DBA5AF /* VideoCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapturer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +102,6 @@
 				D40079BC268F6EA000DBA5AF /* AppDelegate.swift */,
 				D40079BE268F6EA000DBA5AF /* SceneDelegate.swift */,
 				D40079C0268F6EA000DBA5AF /* VideoRecordViewController.swift */,
-				D40079EA268F719B00DBA5AF /* SampleBufferPlayerView.swift */,
 				D40079EC268F755F00DBA5AF /* VideoCapturer.swift */,
 				D40079C2268F6EA000DBA5AF /* Main.storyboard */,
 				D40079C5268F6EA100DBA5AF /* Assets.xcassets */,
@@ -265,7 +262,6 @@
 				D40079BD268F6EA000DBA5AF /* AppDelegate.swift in Sources */,
 				D40079ED268F755F00DBA5AF /* VideoCapturer.swift in Sources */,
 				D40079BF268F6EA000DBA5AF /* SceneDelegate.swift in Sources */,
-				D40079EB268F719B00DBA5AF /* SampleBufferPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,9 +442,14 @@
 				DEVELOPMENT_TEAM = Y4E69MK58Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VideoToolboxSVC/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = VideoToolboxSVC;
+				INFOPLIST_KEY_CFBundleName = VideoToolboxSVC;
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_NSCameraUsageDescription = Recording;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -475,9 +476,14 @@
 				DEVELOPMENT_TEAM = Y4E69MK58Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VideoToolboxSVC/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = VideoToolboxSVC;
+				INFOPLIST_KEY_CFBundleName = VideoToolboxSVC;
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_NSCameraUsageDescription = Recording;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;

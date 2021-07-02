@@ -37,6 +37,9 @@
                             <constraint firstItem="7FX-zO-Idz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mwO-JS-hiE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordButton" destination="7FX-zO-Idz" id="erl-cu-bPV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
