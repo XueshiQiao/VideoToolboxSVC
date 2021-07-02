@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		D40079BD268F6EA000DBA5AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079BC268F6EA000DBA5AF /* AppDelegate.swift */; };
 		D40079BF268F6EA000DBA5AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079BE268F6EA000DBA5AF /* SceneDelegate.swift */; };
-		D40079C1268F6EA000DBA5AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079C0268F6EA000DBA5AF /* ViewController.swift */; };
+		D40079C1268F6EA000DBA5AF /* VideoRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079C0268F6EA000DBA5AF /* VideoRecordViewController.swift */; };
 		D40079C4268F6EA000DBA5AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D40079C2268F6EA000DBA5AF /* Main.storyboard */; };
 		D40079C6268F6EA100DBA5AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D40079C5268F6EA100DBA5AF /* Assets.xcassets */; };
 		D40079C9268F6EA100DBA5AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D40079C7268F6EA100DBA5AF /* LaunchScreen.storyboard */; };
 		D40079D4268F6EA100DBA5AF /* VideoToolboxSVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079D3268F6EA100DBA5AF /* VideoToolboxSVCTests.swift */; };
 		D40079DE268F6EA100DBA5AF /* VideoToolboxSVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079DD268F6EA100DBA5AF /* VideoToolboxSVCUITests.swift */; };
+		D40079EB268F719B00DBA5AF /* SampleBufferPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079EA268F719B00DBA5AF /* SampleBufferPlayerView.swift */; };
+		D40079ED268F755F00DBA5AF /* VideoCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079EC268F755F00DBA5AF /* VideoCapturer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 		D40079B9268F6EA000DBA5AF /* VideoToolboxSVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoToolboxSVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40079BC268F6EA000DBA5AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D40079BE268F6EA000DBA5AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D40079C0268F6EA000DBA5AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D40079C0268F6EA000DBA5AF /* VideoRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordViewController.swift; sourceTree = "<group>"; };
 		D40079C3268F6EA000DBA5AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D40079C5268F6EA100DBA5AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D40079C8268F6EA100DBA5AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		D40079D3268F6EA100DBA5AF /* VideoToolboxSVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoToolboxSVCTests.swift; sourceTree = "<group>"; };
 		D40079D9268F6EA100DBA5AF /* VideoToolboxSVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoToolboxSVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40079DD268F6EA100DBA5AF /* VideoToolboxSVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoToolboxSVCUITests.swift; sourceTree = "<group>"; };
+		D40079EA268F719B00DBA5AF /* SampleBufferPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBufferPlayerView.swift; sourceTree = "<group>"; };
+		D40079EC268F755F00DBA5AF /* VideoCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapturer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,9 @@
 			children = (
 				D40079BC268F6EA000DBA5AF /* AppDelegate.swift */,
 				D40079BE268F6EA000DBA5AF /* SceneDelegate.swift */,
-				D40079C0268F6EA000DBA5AF /* ViewController.swift */,
+				D40079C0268F6EA000DBA5AF /* VideoRecordViewController.swift */,
+				D40079EA268F719B00DBA5AF /* SampleBufferPlayerView.swift */,
+				D40079EC268F755F00DBA5AF /* VideoCapturer.swift */,
 				D40079C2268F6EA000DBA5AF /* Main.storyboard */,
 				D40079C5268F6EA100DBA5AF /* Assets.xcassets */,
 				D40079C7268F6EA100DBA5AF /* LaunchScreen.storyboard */,
@@ -255,9 +261,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D40079C1268F6EA000DBA5AF /* ViewController.swift in Sources */,
+				D40079C1268F6EA000DBA5AF /* VideoRecordViewController.swift in Sources */,
 				D40079BD268F6EA000DBA5AF /* AppDelegate.swift in Sources */,
+				D40079ED268F755F00DBA5AF /* VideoCapturer.swift in Sources */,
 				D40079BF268F6EA000DBA5AF /* SceneDelegate.swift in Sources */,
+				D40079EB268F719B00DBA5AF /* SampleBufferPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +443,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6LDYR79SAY;
+				DEVELOPMENT_TEAM = Y4E69MK58Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VideoToolboxSVC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -443,6 +451,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,7 +472,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6LDYR79SAY;
+				DEVELOPMENT_TEAM = Y4E69MK58Q;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VideoToolboxSVC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -471,6 +480,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
