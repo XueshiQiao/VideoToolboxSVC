@@ -26,6 +26,11 @@ class VideoCapturer: NSObject {
     
     weak var delegate: VideoCapturerDelegate?
     
+    override init() {
+        super.init()
+        prepare()
+    }
+    
     func prepare() {
         captureSession.beginConfiguration()
         defer {
@@ -55,10 +60,13 @@ class VideoCapturer: NSObject {
     }
     
     func start(with delegate: VideoCapturerDelegate) {
-        prepare()
-        
         self.delegate = delegate
         self.captureSession.startRunning()
+    }
+    
+    func stop() {
+        self.delegate = nil
+        self.captureSession.stopRunning()
     }
 }
 

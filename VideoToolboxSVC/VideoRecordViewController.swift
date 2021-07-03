@@ -13,6 +13,8 @@ class VideoRecordViewController: UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     var videoCapturer: VideoCapturer?
     var previewLayer: AVCaptureVideoPreviewLayer?
+    var isRecording = false
+    var videoEncoder: VTEncoder?
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -26,9 +28,10 @@ class VideoRecordViewController: UIViewController {
         super.viewDidLoad()
         videoCapturer = VideoCapturer()
         self.previewLayer = AVCaptureVideoPreviewLayer(session: self.videoCapturer!.captureSession)
+        self.view.layer.insertSublayer(self.previewLayer!, below: self.recordButton.layer)
         self.previewLayer?.videoGravity = .resizeAspectFill
         self.previewLayer?.frame = self.view.bounds
-        self.view.layer.addSublayer(self.previewLayer!)
+        videoEncoder = VTEncoder(exportPath: "", duration: 10)
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,12 +40,23 @@ class VideoRecordViewController: UIViewController {
     }
     
     @IBAction func recordButtonDidTap(_ sender: Any) {
-        videoCapturer?.start(with: self)
+        if isRecording {
+            isRecording = false
+            videoCapturer?.stop()
+            videoEncoder?.stop()
+            recordButton.setTitle("Record", for: .normal)
+        } else {
+            isRecording = true
+            videoEncoder?.prepareVideoToolBox()
+            videoCapturer?.start(with: self)
+            recordButton.setTitle("Stop recording", for: .normal)
+        }
     }
 }
 
 extension VideoRecordViewController: VideoCapturerDelegate {
     func videoCapturer(_ videoCapturer: VideoCapturer, didOutput sampleBuffer: CMSampleBuffer) {
+        videoEncoder?.encode(sampleBuffer)
     }
 }
 

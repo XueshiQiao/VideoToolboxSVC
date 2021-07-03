@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		D40079D4268F6EA100DBA5AF /* VideoToolboxSVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079D3268F6EA100DBA5AF /* VideoToolboxSVCTests.swift */; };
 		D40079DE268F6EA100DBA5AF /* VideoToolboxSVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079DD268F6EA100DBA5AF /* VideoToolboxSVCUITests.swift */; };
 		D40079ED268F755F00DBA5AF /* VideoCapturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40079EC268F755F00DBA5AF /* VideoCapturer.swift */; };
+		D41F0D76269055C1001C6751 /* VTEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D41F0D7126904C08001C6751 /* VTEncoder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,10 @@
 		D40079D9268F6EA100DBA5AF /* VideoToolboxSVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoToolboxSVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40079DD268F6EA100DBA5AF /* VideoToolboxSVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoToolboxSVCUITests.swift; sourceTree = "<group>"; };
 		D40079EC268F755F00DBA5AF /* VideoCapturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapturer.swift; sourceTree = "<group>"; };
+		D41F0D6F26904C08001C6751 /* VideoToolboxSVCTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoToolboxSVCTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		D41F0D7026904C08001C6751 /* VTEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VTEncoder.h; path = VideoToolboxSVC/VTEncoder.h; sourceTree = SOURCE_ROOT; };
+		D41F0D7126904C08001C6751 /* VTEncoder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VTEncoder.m; path = VideoToolboxSVC/VTEncoder.m; sourceTree = SOURCE_ROOT; };
+		D43D759326905A8A00D94F27 /* VideoToolboxSVC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoToolboxSVC-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +104,13 @@
 		D40079BB268F6EA000DBA5AF /* VideoToolboxSVC */ = {
 			isa = PBXGroup;
 			children = (
+				D43D759326905A8A00D94F27 /* VideoToolboxSVC-Bridging-Header.h */,
 				D40079BC268F6EA000DBA5AF /* AppDelegate.swift */,
 				D40079BE268F6EA000DBA5AF /* SceneDelegate.swift */,
 				D40079C0268F6EA000DBA5AF /* VideoRecordViewController.swift */,
 				D40079EC268F755F00DBA5AF /* VideoCapturer.swift */,
+				D41F0D7026904C08001C6751 /* VTEncoder.h */,
+				D41F0D7126904C08001C6751 /* VTEncoder.m */,
 				D40079C2268F6EA000DBA5AF /* Main.storyboard */,
 				D40079C5268F6EA100DBA5AF /* Assets.xcassets */,
 				D40079C7268F6EA100DBA5AF /* LaunchScreen.storyboard */,
@@ -115,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				D40079D3268F6EA100DBA5AF /* VideoToolboxSVCTests.swift */,
+				D41F0D6F26904C08001C6751 /* VideoToolboxSVCTests-Bridging-Header.h */,
 			);
 			path = VideoToolboxSVCTests;
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 					};
 					D40079CE268F6EA100DBA5AF = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1240;
 						TestTargetID = D40079B8268F6EA000DBA5AF;
 					};
 					D40079D8268F6EA100DBA5AF = {
@@ -207,7 +217,7 @@
 				};
 			};
 			buildConfigurationList = D40079B4268F6EA000DBA5AF /* Build configuration list for PBXProject "VideoToolboxSVC" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -260,6 +270,7 @@
 			files = (
 				D40079C1268F6EA000DBA5AF /* VideoRecordViewController.swift in Sources */,
 				D40079BD268F6EA000DBA5AF /* AppDelegate.swift in Sources */,
+				D41F0D76269055C1001C6751 /* VTEncoder.m in Sources */,
 				D40079ED268F755F00DBA5AF /* VideoCapturer.swift in Sources */,
 				D40079BF268F6EA000DBA5AF /* SceneDelegate.swift in Sources */,
 			);
@@ -461,6 +472,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = blue.joey.VideoToolboxSVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "VideoToolboxSVC/VideoToolboxSVC-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -495,6 +507,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = blue.joey.VideoToolboxSVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "VideoToolboxSVC/VideoToolboxSVC-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -505,6 +518,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6LDYR79SAY;
@@ -519,6 +533,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = blue.joey.VideoToolboxSVCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "VideoToolboxSVCTests/VideoToolboxSVCTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoToolboxSVC.app/VideoToolboxSVC";
@@ -530,6 +546,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6LDYR79SAY;
@@ -544,6 +561,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = blue.joey.VideoToolboxSVCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "VideoToolboxSVCTests/VideoToolboxSVCTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VideoToolboxSVC.app/VideoToolboxSVC";
